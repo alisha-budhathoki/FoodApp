@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import SearchBar from '../components/search_bar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/results_list'
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = () => {
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = useResults();
     const filterResultsByPrice = (price) => {
@@ -23,17 +23,17 @@ const SearchScreen = ({ navigation }) => {
                 <ResultsList
                     results={filterResultsByPrice('$')}
                     title="Cost Effective"
-                    navigation={navigation}
+                    // navigation={navigation}
                 />
                 <ResultsList
                     results={filterResultsByPrice('$$')}
                     title="Bit Pricier"
-                    navigation={navigation}
+                    // navigation={navigation}
                 />
                 <ResultsList
                     results={filterResultsByPrice('$$$')}
                     title="Big Spender"
-                    navigation={navigation}
+                    // navigation={navigation}
                 />
 
             </ScrollView>
